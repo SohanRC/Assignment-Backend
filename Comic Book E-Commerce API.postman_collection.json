@@ -1,0 +1,290 @@
+{
+	"info": {
+		"_postman_id": "1823f330-eb24-4995-82e8-f269f8f76940",
+		"name": "Comic Book E-Commerce API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33338510"
+	},
+	"item": [
+		{
+			"name": "Create Comic Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"const description = `\r",
+							"### Example Response\r",
+							"\\`\\`\\`json\r",
+							"${JSON.stringify(response, null, 2)}\r",
+							"\\`\\`\\`\r",
+							"`;\r",
+							"\r",
+							"pm.request.description = description;"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"bookName\" : \"Harry Potter\",\r\n    \"authorName\" : \"J.K Rowling\",\r\n    \"yearOfPublication\" : 2004,\r\n    \"price\" : 2100,\r\n    \"discount\" : 50,\r\n    \"numberOfPages\" : 900,\r\n    \"condition\" : \"new\",\r\n    \"description\" : \"This is a harry potter book written by J.K Rowling...\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/comicManagement/create",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicManagement",
+						"create"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Edit Comic Book",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"exec": [
+							"const response = pm.response.json();\r",
+							"const description = `\r",
+							"### Example Response\r",
+							"\\`\\`\\`json\r",
+							"${JSON.stringify(response, null, 2)}\r",
+							"\\`\\`\\`\r",
+							"`;\r",
+							"\r",
+							"pm.request.description = description;"
+						],
+						"type": "text/javascript",
+						"packages": {}
+					}
+				}
+			],
+			"request": {
+				"method": "PATCH",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"yearOfPublication\" : 2010\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/comicManagement/edit/67110de91354a7aff08ecdc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicManagement",
+						"edit",
+						"67110de91354a7aff08ecdc7"
+					]
+				}
+			},
+			"response": [
+				{
+					"name": "Edit Comic Book",
+					"originalRequest": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "application/json",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"yearOfPublication\" : 2010\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:3000/api/comicManagement/edit/67110de91354a7aff08ecdc7",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "3000",
+							"path": [
+								"api",
+								"comicManagement",
+								"edit",
+								"67110de91354a7aff08ecdc7"
+							]
+						}
+					},
+					"status": "OK",
+					"code": 200,
+					"_postman_previewlanguage": "json",
+					"header": [
+						{
+							"key": "X-Powered-By",
+							"value": "Express"
+						},
+						{
+							"key": "Vary",
+							"value": "Origin"
+						},
+						{
+							"key": "Access-Control-Allow-Credentials",
+							"value": "true"
+						},
+						{
+							"key": "Content-Type",
+							"value": "application/json; charset=utf-8"
+						},
+						{
+							"key": "Content-Length",
+							"value": "404"
+						},
+						{
+							"key": "ETag",
+							"value": "W/\"194-3y9B07I9nGBqzKHCn2WDzbM6Khg\""
+						},
+						{
+							"key": "Date",
+							"value": "Thu, 17 Oct 2024 13:19:43 GMT"
+						},
+						{
+							"key": "Connection",
+							"value": "keep-alive"
+						},
+						{
+							"key": "Keep-Alive",
+							"value": "timeout=5"
+						}
+					],
+					"cookie": [],
+					"body": "{\n    \"success\": true,\n    \"message\": \"Comic Book successfully Updated !\",\n    \"comic\": {\n        \"_id\": \"67110de91354a7aff08ecdc7\",\n        \"bookName\": \"Harry Potter\",\n        \"authorName\": \"J.K Rowling\",\n        \"yearOfPublication\": 2010,\n        \"price\": 2100,\n        \"discount\": 50,\n        \"numberOfPages\": 900,\n        \"condition\": \"new\",\n        \"description\": \"This is a harry potter book written by J.K Rowling...\",\n        \"createdAt\": \"2024-10-17T13:15:21.273Z\",\n        \"updatedAt\": \"2024-10-17T13:19:43.141Z\",\n        \"__v\": 0\n    }\n}"
+				}
+			]
+		},
+		{
+			"name": "Delete a Comic",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text",
+						"disabled": true
+					}
+				],
+				"url": {
+					"raw": "http://localhost:3000/api/comicManagement/delete/67110de91354a7aff08ecdc7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicManagement",
+						"delete",
+						"67110de91354a7aff08ecdc7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Filter Comics",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"page\" : \"1\",\r\n    \"limit\" : \"2\",\r\n    \"sortBy\" : {\r\n        \"fieldName\" : \"yearOfPublication\",\r\n        \"order\" : \"desc\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/comicManagement/getComics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicManagement",
+						"getComics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Comic By Id",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/comicManagement/getComic/671110841354a7aff08ecdcf",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"comicManagement",
+						"getComic",
+						"671110841354a7aff08ecdcf"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
